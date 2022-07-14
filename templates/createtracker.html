@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<HEAD>
+  <meta charset="utf-8">
+  <meta name="viewpoint" content="width=device-width", "inital-scale=1">
+    <title>createtracker</title>
+</HEAD>
+<body>
+  <form action= "/createtracker/{{user}}" method="post">
+    <h1>Create a tracker</h1>
+    <div><hr><label for = "name">Enter the tracker name:</label> 
+    <input type="text" id="name" name="name" required></hr></div>
+    <div><hr><label for = "Description">Enter a Description:</label> 
+    <input type="text" id="Description" name="Description"></hr></div>
+    <div><hr><label for = "Settings">Enter a Settings:</label> 
+    <input type="text" id="Settings" name="Settings"></hr>
+    <h6>For Multiple Choice trackers, Settings field needs to contain the options separated by a comma.</h6></div>
+    <div><p><hr><label for = "TrackerType">Select tracker type:
+    <select name="TrackerType" id="TrackerType" required>
+      <option value = "numerical">Numerical</option>
+      <option value = "m_choice">Multiple Choice</option>
+      <option value = "t_dur">Time Duration</option>
+      <option value = "bool">Boolean</option></label> 
+    </hr></div>
+    <div>
+    <hr><input type="submit" value="submit"></hr>
+    </div>
+    <p><a href="/dashboard/{{user}}" type="button">Back to Dashboard</a></p>
+  </form>
+</body>
+  
+</html>

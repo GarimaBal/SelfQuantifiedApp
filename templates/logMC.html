@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<HEAD>
+  <meta charset="utf-8">
+  <meta name="viewpoint" content="width=device-width", "inital-scale=1">
+    <title>New Multiple Choice Log</title>
+</HEAD>
+<body>
+  <form action= "/user/{{user}}/logtracker/{{track}}" method="post">
+    <h1>log tracker: {{trackername}}</h1>
+    <div><hr><label for = "time">When:</label> 
+    <input type="text" id="time" value="{{t}}" disabled></hr></div>
+
+    {%for key, value in choices.items()%}
+    <div><hr><label for = "Value">{{key}}:</label> 
+    <input type="radio" name="Value" id="Value" value={{value}}></hr></div>
+    {%endfor%}
+    
+    
+    <div><hr><label for = "Notes">Notes:</label> 
+    <input type="text" id="Notes" name="Notes"></hr></div>
+    </div>
+    <div>
+    <hr><input type="submit" value="Log it"></hr>
+    </div>
+    
+    <p><a href="/dashboard/{{user}}" type="button">Back to Dashboard</a></p>
+  </form>
+</body>
+  
+</html>

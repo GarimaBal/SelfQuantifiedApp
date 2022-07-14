@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<HEAD>
+  <meta charset="utf-8">
+  <meta name="viewpoint" content="width=device-width", "inital-scale=1">
+    <title>createtracker</title>
+</HEAD>
+<body>
+  <form action= "/user/{{user}}/logtracker/{{tra}}/Edit" method="post">
+    <h1>Edit a tracker</h1>
+    <div><hr><label for = "name">Enter the tracker name:</label> 
+    <input type="text" id="name" name="name" value="{{tname}}"></hr></div>
+    
+    <div><hr><label for = "Description">Enter a Description:</label> 
+    <input type="text" id="Description" name="Description" value="{{des}}"></hr></div>
+    
+    <div><hr><label for = "Settings">Enter a Settings:</label> 
+    <input type="text" id="Settings" name="Settings" value="{{set}}"></hr>
+    <h6>Please ensure the number of options are the same or more than the the number that was present ealier in case of Multiple Choice tracker.</h6></div>
+    
+    <div><p><hr><label for = "TrackerType">Select tracker type:</label>
+     <input type="text" id="TrackerType" name="TrackerType" value="{{type}}" disabled></hr></div>
+    
+    <div>
+    <hr><input type="submit" value="submit"></hr>
+    </div>
+    <p><a href="#" onclick="history.go(-1)" type="button">Back to Dashboard</a></p>
+  </form>
+</body>
+  
+</html>

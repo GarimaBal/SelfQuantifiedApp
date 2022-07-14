@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<HEAD>
+  <meta charset="utf-8">
+  <meta name="viewpoint" content="width=device-width", "inital-scale=1">
+  <style>table{ width: 100%; margin: 20px auto; table-layout: auto;}
+  
+  .fixed{table-layout: fixed;}
+  table,td,th{border-collapse: collapse;}
+  th, td {padding: 10px; border-bottom: 1px solid; text-align: center;}</style>
+</HEAD>
+<body>  
+    <h1 align="center">Welcome to the Dashboard</h1>
+   
+    <table id="user-tracker" >
+      <tr><th>Tracker Name</th>
+      <th>Last Tracked Time</th>
+      <th align="right">Actions</th></tr>
+      {%for tracker in trackers%}
+      <tr>
+        <div><td><a href="/logpage/{{tracker["tracker_id"]}}">{{tracker["tracker_name"]}}</a></td></div>
+        <div><td>{{ltt[tracker["tracker_id"]]}}</td></div>
+        <td><div class="topnav-right">
+              <a href="/user/{{user}}/logtracker/{{tracker["tracker_id"]}}">New Entry</a>
+               &emsp;<a href="/user/{{user}}/logtracker/{{tracker["tracker_id"]}}/Edit">Edit</a>&emsp;
+               <a href="/user/{{user}}/logtracker/{{tracker["tracker_id"]}}/Delete">Delete</a></div></td>
+      </tr>
+      {%endfor%}
+      </table>
+    
+<p><a href="/createtracker/{{user}}" type="button">Create a tracker</a></p>  
+<p><a href="/logout" type="button">logout</a></p>
+
+</body> 
+</html>

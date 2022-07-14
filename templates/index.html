@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<HEAD>
+  <meta charset="utf-8">
+  <meta name="viewpoint" content="width=device-width", "inital-scale=1">
+</HEAD>
+<body>
+  {% if "username" in session %}
+    <h1> Welcome you are logged in as {{ session.username }}</h1>
+    <p><a href="/dashboard/{{ session.userid}}" type="button">Procced to userpage</a></p>
+    <p><a href="/logout" type="button">Logout</a></p>
+  {%else%}
+    <h1>Welcome to QuantifiedSelfApp</h1>
+    <p><a href="/login" type="button">Login</a></p>
+    <p><a href="/signup" type="button">Sign up</a></p>
+  {%endif%}
+</body> 
+</html>

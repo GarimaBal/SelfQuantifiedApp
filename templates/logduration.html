@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<HEAD>
+  <meta charset="utf-8">
+  <meta name="viewpoint" content="width=device-width", "inital-scale=1">
+    <title>New Time Duration Log</title>
+</HEAD>
+<body>
+  <form action= "/user/{{user}}/logtracker/{{track}}" method="post">
+    <h1>log tracker: {{trackername}}</h1>
+    <div><hr><label for = "time">When:</label> 
+    <input type="text" id="time" value="{{t}}" disabled></hr></div>
+    <div><hr><label for = "Value">Time Duration (in mins):</label> 
+    <input type="number" id="Value" name="Value"></hr></div>
+    <div><hr><label for = "Notes">Notes:</label> 
+    <input type="text" id="Notes" name="Notes"></hr></div>
+    <div>
+    <hr><input type="submit" value="Log it"></hr>
+    </div>
+    <p><a href="/dashboard/{{user}}" type="button">Back to Dashboard</a></p>
+  </form>
+</body>
+  
+</html>

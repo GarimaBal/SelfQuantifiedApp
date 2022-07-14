@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<HEAD>
+  <meta charset="utf-8">
+  <meta name="viewpoint" content="width=device-width", "inital-scale=1">
+  <style>table{ width: 100%; margin: 20px auto; table-layout: auto;}
+  
+  .fixed{table-layout: fixed;}
+  table,td,th{border-collapse: collapse;}
+  th, td {padding: 10px; border-bottom: 1px solid; text-align: center;}</style>
+</HEAD>
+<body>  
+    <h1 align="center">Welcome to the Tracker Page of {{trackername}}</h1>
+   
+    <table id="user-tracker" >
+      <tr><th>Time</th>
+      <th>Value</th>
+      <th>Notes</th>
+      <th align="right">Actions</th></tr></tr>
+      {%for entry in enteries%}
+      <tr>
+        <div><td>{{entry["time"]}}</td></div>
+        <div><td>{{entry["value"]}}</td></div>
+        <div><td>{{entry["notes"]}}</td></div>
+        <div><td>
+               <a href="/EditLog/{{entry["logid"]}}">Edit</a>&emsp;
+               <a href="/DeleteLog/{{entry["logid"]}}">Delete</a></td></div>
+      </tr>
+      {%endfor%}
+      </table>
+    
+<p><a href="/dashboard/{{user}}" type="button">Back to Dashboard</a></p>  
+<p><a href="/user/{{user}}/logtracker/{{track}}" type="button">Create New Entry</a></p>
+<p><h2>Data Tables</h2></p>
+<p><a href="/DataPage-1week/{{track}}">1 week data</a>
+<p><a href="/DataPage-1month/{{track}}">1 month data</a>
+<p><a href="/DataPage-6month/{{track}}">6 month data</a>
+<p><a href="/DataPage-1year/{{track}}">1 year data</a>
+<p><a href="/DataPage-AllData/{{track}}">All time data</a>
+</body> 
+</html>
